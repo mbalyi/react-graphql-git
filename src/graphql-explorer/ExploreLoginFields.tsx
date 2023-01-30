@@ -24,13 +24,11 @@ export const ExploreLoginFields: React.FunctionComponent<
 
   React.useEffect(() => {
     onUserChange(debouncedUser);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedUser]);
+  }, [debouncedUser, onUserChange]);
 
   React.useEffect(() => {
     onTokenChange(debouncedToken);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedToken]);
+  }, [debouncedToken, onTokenChange]);
 
   return (
     <>

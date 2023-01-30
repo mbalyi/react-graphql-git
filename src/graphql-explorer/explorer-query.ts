@@ -1,9 +1,10 @@
-export const exploreQuery = (username: string) => `
+export const exploreQuery = (username: string, searchString: string, itemPerPage: number) => `
     {
         viewer {
             name
         }
-        search(query: "user:${username} sort:updated-desc", type: REPOSITORY, first: 3) {
+        search(query: "${searchString} user:${username} sort:updated-desc", type: REPOSITORY, first: ${itemPerPage}) {
+            repositoryCount
             edges {
                 cursor
                 node {
